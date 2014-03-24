@@ -18,8 +18,8 @@ tar xvf hostapd-1.0-karma.tar
 cd hostapd-1.0-karma/hostapd
 make
 
-cp hostapd ../
-cp hostapd_cli ../
+cp hostapd ../../
+cp hostapd_cli ../../
 
 echo "..DONE.."
 exit
