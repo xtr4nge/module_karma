@@ -48,12 +48,12 @@ if($service != "") {
             exec("$bin_danger \"$exec\"" );
         }
 
-        $exec = "/usr/sbin/karma-hostapd_cli -p /var/run/hostapd-phy0 karma_enable";
+        $exec = "./hostapd_cli -p /var/run/hostapd-phy0 karma_enable";
         exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"" );
         
     } else if($action == "stop") {
         // STOP MODULE
-        $exec = "/usr/sbin/karma-hostapd_cli -p /var/run/hostapd-phy0 karma_disable";
+        $exec = "./hostapd_cli -p /var/run/hostapd-phy0 karma_disable";
         exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"" );
         
         // COPY LOG
