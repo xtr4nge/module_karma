@@ -5,7 +5,7 @@ $mod_path="/usr/share/FruityWifi/www/modules/karma";
 $mod_logs="/usr/share/FruityWifi/logs/karma.log"; 
 $mod_logs_history="$mod_path/includes/logs/";
 $mod_panel="show";
-$mod_isup="/usr/sbin/karma-hostapd_cli -p /var/run/hostapd-phy0 karma_get_state | tail -1 | grep ENABLED";
+$mod_isup="/usr/share/FruityWifi/www/modules/karma/includes/hostapd_cli -p /var/run/hostapd-phy0 karma_get_state | tail -1 | grep ENABLED";
 $mod_alias="Karma";
 # EXEC
 $bin_danger = "/usr/share/FruityWifi/bin/danger";
