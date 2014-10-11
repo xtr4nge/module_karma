@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PATH=$PATH:/usr/sbin:/sbin
-
 echo "installing Hostapd/Karma Dependencies..."
 # DEP HOSTAPD-KARMA
 apt-get -y install gcc-4.7
