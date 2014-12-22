@@ -43,9 +43,8 @@ $(function() {
 <br>
 
 <?
-
-include "../../config/config.php";
 include "../../login_check.php";
+include "../../config/config.php";
 include "_info_.php";
 include "../../functions.php";
 
