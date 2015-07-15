@@ -28,7 +28,9 @@ then
     echo "--------------------------------"
     echo "ADDING: CONFIG_LIBNL32=y (Debian Jessie patch)"
     echo "--------------------------------"
-	
+    
+    apt-get -y install libnl-3-dev libnl-genl-3-dev
+    
     EXEC="s,^#CONFIG_LIBNL32=y,CONFIG_LIBNL32=y,g"
     sed -i $EXEC hostapd-karma-master/hostapd/.config
     
