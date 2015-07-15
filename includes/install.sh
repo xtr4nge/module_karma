@@ -11,12 +11,35 @@ apt-get -y install libnl1 libnl-dev libssl-dev
 
 echo "installing Hostapd/Karma..."
 # INSTALL HOSTAPD-KARMA
-wget http://www.digininja.org/files/hostapd-1.0-karma.tar.bz2 -O hostapd-1.0-karma.tar.bz2
+#wget http://www.digininja.org/files/hostapd-1.0-karma.tar.bz2 -O hostapd-1.0-karma.tar.bz2
 
-bunzip2 hostapd-1.0-karma.tar.bz2
-tar xvf hostapd-1.0-karma.tar
-cd hostapd-1.0-karma/hostapd
+#bunzip2 hostapd-1.0-karma.tar.bz2
+#tar xvf hostapd-1.0-karma.tar
+#cd hostapd-1.0-karma/hostapd
+#make
+
+wget https://github.com/xtr4nge/hostapd-karma/archive/master.zip -O hostapd-karma.zip
+
+unzip hostapd-karma.zip
+
+cmd=`lsb_release -c |grep "jessie"`
+if [[ ! -z $cmd ]]
+then
+    echo "--------------------------------"
+    echo "ADDING: CONFIG_LIBNL32=y (Debian Jessie patch)"
+    echo "--------------------------------"
+	
+    EXEC="s,^#CONFIG_LIBNL32=y,CONFIG_LIBNL32=y,g"
+    sed -i $EXEC hostapd-karma-master/hostapd/.config
+    
+    echo "[setup completed]"
+    echo
+
+fi
+
+cd hostapd-karma-master/hostapd
 make
+
 
 cp hostapd ../../
 cp hostapd_cli ../../
