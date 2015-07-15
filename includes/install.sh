@@ -31,6 +31,9 @@ then
     
     apt-get -y install libnl-3-dev libnl-genl-3-dev
     
+    EXEC="s,^#CFLAGS += -I/usr/include/libnl3,CFLAGS += -I/usr/include/libnl3,g"
+    sed -i $EXEC hostapd-karma-master/hostapd/.config
+    
     EXEC="s,^#CONFIG_LIBNL32=y,CONFIG_LIBNL32=y,g"
     sed -i $EXEC hostapd-karma-master/hostapd/.config
     
