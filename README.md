@@ -1,4 +1,4 @@
 module_karma
 ============
 
-FruityWifi warma module
+FruityWiFi karma module

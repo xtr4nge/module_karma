@@ -1,6 +1,6 @@
 <? 
 /*
-	Copyright (C) 2013-2014 xtr4nge [_AT_] gmail.com
+	Copyright (C) 2013-2016 xtr4nge [_AT_] gmail.com
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -108,6 +108,7 @@ Loading, please wait...
         <ul>
             <li><a href="#result-1">Output</a></li>
             <li><a href="#result-2">History</a></li>
+			<li><a href="#result-3">About</a></li>
         </ul>
         
         <!-- OUTPUT -->
@@ -135,10 +136,11 @@ Loading, please wait...
             </form>
             
         </div>
-
+		<!-- END OUTPUT -->
+		
         <!-- HISTORY -->
 
-        <div id="result-2">
+        <div id="result-2" class="history">
             <input type="submit" value="refresh">
             <br><br>
             
@@ -154,8 +156,19 @@ Loading, please wait...
                 echo "<br>";
             }
             ?>
-            
+			
+		</div>
+		
+		<!-- END HISTORY -->
+        
+		<!-- ABOUT -->
+
+        <div id="result-3" class="history">
+            <? include "includes/about.php"; ?>
         </div>
+
+        <!-- END ABOUT -->
+		
         
     </div>
 
@@ -265,11 +278,11 @@ Loading, please wait...
         echo "</script>";
     } else if ($_GET["tab"] == 3) {
         echo "<script>";
-        echo "$( '#result' ).tabs({ active: 3 });";
+        echo "$( '#result' ).tabs({ active: 2 });";
         echo "</script>";
     } else if ($_GET["tab"] == 4) {
         echo "<script>";
-        echo "$( '#result' ).tabs({ active: 4 });";
+        echo "$( '#result' ).tabs({ active: 3 });";
         echo "</script>";
     } 
     ?>

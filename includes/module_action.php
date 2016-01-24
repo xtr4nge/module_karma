@@ -1,6 +1,6 @@
 <? 
 /*
-    Copyright (C) 2013-2014 xtr4nge [_AT_] gmail.com
+    Copyright (C) 2013-2016 xtr4nge [_AT_] gmail.com
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,34 +41,26 @@ if($service != "") {
         // COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            //exec("$bin_danger \"$exec\"" ); //DEPRECATED
             exec_fruitywifi($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            //exec("$bin_danger \"$exec\"" ); //DEPRECATED
             exec_fruitywifi($exec);
         }
 
-        $exec = "./hostapd_cli -p /var/run/hostapd-phy0 karma_enable";
-        //$exec = "./hostapd_cli karma_enable";
-        //exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"" ); //DEPRECATED
+        $exec = "./hostapd_cli -p /var/run/hostapd karma_enable";
         exec_fruitywifi($exec);
         
     } else if($action == "stop") {
         // STOP MODULE
-        $exec = "./hostapd_cli -p /var/run/hostapd-phy0 karma_disable";
-        //$exec = "./hostapd_cli karma_disable";
-        //exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"" ); //DEPRECATED
+        $exec = "./hostapd_cli -p /var/run/hostapd karma_disable";
         exec_fruitywifi($exec);
         
         // COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            //exec("$bin_danger \"$exec\"" ); //DEPRECATED
             exec_fruitywifi($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            //exec("$bin_danger \"$exec\"" ); //DEPRECATED
             exec_fruitywifi($exec);
         }
 
@@ -79,11 +71,9 @@ if($service != "") {
 if ($install == "install_$mod_name") {
 
     $exec = "chmod 755 install.sh";
-    //exec("$bin_danger \"$exec\"" ); //DEPRECATED
     exec_fruitywifi($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
-    //exec("$bin_danger \"$exec\"" ); //DEPRECATED
     exec_fruitywifi($exec);
 
     header('Location: ../../install.php?module='.$mod_name);
