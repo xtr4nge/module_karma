@@ -26,7 +26,7 @@ cmd=`lsb_release -c |grep -iEe "jessie|kali|sana"`
 if [[ ! -z $cmd ]]
 then
     echo "--------------------------------"
-    echo "ADDING: CONFIG_LIBNL32=y (Debian Jessie patch)"
+    echo "ADDING: CONFIG_LIBNL32=y (Debian Jessie|Kali patch)"
     echo "--------------------------------"
     
     apt-get -y install libnl-3-dev libnl-genl-3-dev
